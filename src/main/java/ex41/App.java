@@ -10,7 +10,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        String fileName = new String("names.txt");
+        String fileName = new String("exercise41_input.txt");
         Data_Handler readFile;
         Scanner input = new Scanner(System.in);
 
