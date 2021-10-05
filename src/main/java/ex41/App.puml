@@ -1,0 +1,18 @@
+@startuml
+class App {
+    +void main()
+}
+
+class Data_Handler {
+
+    -ArrayList<String> names
+    -File inData
+    +void handleData()
+    +String readData()
+    +Int sortData()
+    +void displayNames()
+}
+
+App <-- Data_Handler : Main class \n Instantiates Data_Handler \n class
+
+@enduml
