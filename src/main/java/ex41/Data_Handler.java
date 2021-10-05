@@ -2,6 +2,8 @@ package ex41;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -9,8 +11,8 @@ import java.util.Scanner;
 public class Data_Handler {
     //Array list holding the list of names
     //File object will store the file holding the names
-    private ArrayList<String> names;
-    private File inData;
+    private final ArrayList<String> names;
+    private final File inData;
 
     //constructor:
     //Pre: Receives the name of the file were to extract the data from
@@ -65,16 +67,41 @@ public class Data_Handler {
         return 1;
     }
 
+    public void createFile()
+    {
+        File output = new File("src/main/java/ex41/exercise41_output.txt");
+
+        try {
+            boolean fileCreated = output.createNewFile();
+            if (!fileCreated) {
+                output.delete();
+                output.createNewFile();
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while creating the output");
+            System.out.println("Now exiting");
+            System.exit(1);
+        }
+    }
+
 
     //Pre:--
-    //Post: Displays the array of names
+    //Post: Creates the file holding the sorted output
     public void displayNames(){
-        System.out.printf("Total of %d names\n" +
-                          "-----------------\n", names.size());
-
-        for(String name : names)
+        String s = String.format("Total of %d names\n" +
+                "-----------------\n", names.size());
+        try(FileWriter writer = new FileWriter("src/main/java/ex41/exercise41_output.txt"))
         {
-            System.out.println(name);
+            writer.write(s);
+            for(String name : names)
+            {
+                writer.append(name).append("\n");
+            }
+        }catch (IOException e)
+        {
+            System.out.println("ERROR while writing to file");
+            e.printStackTrace();
         }
+
     }
 }
