@@ -15,7 +15,7 @@ import java.util.ArrayList;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class AppTestex41
 {
     @Rule
     public TemporaryFolder folder = new TemporaryFolder();

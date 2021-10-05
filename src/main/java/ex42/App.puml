@@ -1,0 +1,30 @@
+@startuml
+
+class App {
+    +main()
+}
+
+class Data {
+    -String fName
+    -String lName
+    -String salary
+
+    +String getFname()
+    +String getLname()
+    +String getsalary()
+
+    +void setFname()
+    +void setLname()
+    +void setsalary()
+}
+
+class Process_data {
+    +String readData()
+    +Data[] parse_data()
+    +void displayData()
+}
+
+App <-- Data : implemented \n in main
+App <-- Process_data : implemented \n in main
+
+@enduml
