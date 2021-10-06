@@ -1,0 +1,32 @@
+@startuml
+
+class Website{
+    -String siteName
+    -String author
+    -String css
+    -String jsc
+    -final String root
+    -boolean files_created
+
+    +boolean initWebsite()
+    +String initHTML()
+    +void display()
+
+    +String getSiteName()
+    +void setSiteName(String siteName)
+    +String getAuthor()
+    +void setAuthor(String author)
+    +String getCss()
+    +void setCss(String css)
+    +String getJsc()
+    +void setJsc(String jsc)
+}
+
+class App{
+    +void main()
+
+}
+
+App <-- Website : Object of Website\n implemented in App main()
+
+@enduml
