@@ -1,0 +1,24 @@
+@startuml
+
+class App{
+    +void main()
+}
+class Products{
+    -String name
+    -String price
+    -String quantity
+
+    +String full_product_info()
+    +String getName()
+    +String getPrice()
+    +String getQuantity()
+}
+class Data_parser{
+    +ArrayList<Products> read_products()
+    +Products getProduct()
+}
+
+App <-- Products : Products object implemented\n in main class
+App <-- Data_parser : Data_parser object implemented\n in main class
+
+@enduml
