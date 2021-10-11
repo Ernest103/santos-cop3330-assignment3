@@ -1,0 +1,27 @@
+@startuml
+
+class App{
+    +void main()
+}
+
+class Word{
+    -String word
+    -int frequency
+
+    +Integer getFrequency()
+    +void setFrequency()
+    +String getWord()
+    +int compareTo()
+}
+
+class Frequency_Finder{
+    -boolean error_occurred
+    +boolean isError_occurred()
+    +void setfrequency()
+    +void display_freq_based()
+}
+
+App <-- Word : word object implemented \n in main
+App <-- Frequency_Finder : Frequency_Finder object implemented \n in main
+
+@enduml
