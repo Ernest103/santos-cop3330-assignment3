@@ -1,0 +1,19 @@
+@startuml
+
+class App{
+    +void main()
+}
+
+class Word_finder{
+    -ArrayList<String> lines
+
+    +void readData()
+    +void find_replace()
+    +File create_output()
+    +void write_output()
+
+}
+
+App <-- Word_finder : Object of Type Word_finder \n implemented in main function
+
+@enduml
